@@ -13,6 +13,9 @@ gem 'rails', '4.2.4'
    gem 'sqlite3'
  end
  
+ #seed data
+ gem 'faker'
+ 
  #security for environment variables
  gem 'figaro', '1.0'
 # Use SCSS for stylesheets
