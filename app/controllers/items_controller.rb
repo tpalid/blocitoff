@@ -36,11 +36,14 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-      flash[:notice] = "Task was marked as complete.  Give yourself a high five!"
-      redirect_to [current_user]
+      flash.now[:notice] = "Task was marked as complete.  Give yourself a high five!"
     else 
-      flash[:notice] = "There was an error marking the task complete. Are you sure you finished it?"
-      redirect_to [current_user]
+      flash.now[:notice] = "There was an error marking the task complete. Are you sure you finished it?"
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
   
