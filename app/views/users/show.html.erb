@@ -1,5 +1,12 @@
 <h1> <%= @user.name %> </h1>
 
+<table class="table table-bordered">
+    <tr>
+        <th>Item</th>
+        <th>Days Left</th>
+        <th>Complete</th>
+    </tr>
 <%= render @items %>
+</table>
 
 <%= render "items/form", locals: { item: @item } %>

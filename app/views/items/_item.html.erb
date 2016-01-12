@@ -1,3 +1,6 @@
-<p> <%= item.body %> </p>
-<%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true%>
-<p> <%= item.days_left %> </p>
+    <tr>
+        <td><%= item.body %></td>
+        <td><%= item.days_left %></td>
+        <td><%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true%></td>
+    </tr>
+    
