@@ -8,7 +8,8 @@
 </head>
 <body>
   
-         <% if flash[:notice] %>
+<div class="container">
+     <% if flash[:notice] %>
          <div class="alert alert-success">
            <button type="button" class="close" data-dismiss="alert">&times;</button>
            <%= flash[:notice] %>
@@ -25,7 +26,12 @@
          </div>
        <% end %>
        
+       <div class="pull-right user-info">
        <% if current_user %>
+           Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+          <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
+            <span class="glyphicon glyphicon-user"></span>
+          <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
                 <span class="glyphicon glyphicon-log-out"></span>
             <% end %>
@@ -33,8 +39,12 @@
              <%= link_to "Sign In", new_user_session_path %> or
              <%= link_to "Sign Up", new_user_registration_path %>
         <% end %>
+        </div>
 
 <%= yield %>
 
+</div>
+
+        
 </body>
 </html>

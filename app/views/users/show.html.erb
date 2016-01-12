@@ -1,6 +1,8 @@
+<div class="row">
+<div class="col-md-8">
 <h1> <%= @user.name %> </h1>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-striped table-responsive">
     <tr>
         <th>Item</th>
         <th>Days Left</th>
@@ -10,3 +12,5 @@
 </table>
 
 <%= render "items/form", locals: { item: @item } %>
+</div>
+</div>
