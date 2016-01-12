@@ -36,9 +36,9 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
-      flash.now[:notice] = "Task was marked as complete.  Give yourself a high five!"
+      flash[:notice] = "Task was marked as complete.  Give yourself a high five!"
     else 
-      flash.now[:notice] = "There was an error marking the task complete. Are you sure you finished it?"
+      flash[:notice] = "There was an error marking the task complete. Are you sure you finished it?"
     end
     
     respond_to do |format|
