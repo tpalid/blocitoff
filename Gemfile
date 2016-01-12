@@ -13,7 +13,10 @@ gem 'rails', '4.2.4'
    gem 'sqlite3'
  end
  
- #seed data
+ #automate tasks (deletion of items over 7 days old)
+ gem 'whenever', :require => false
+ 
+  #seed data
  gem 'faker'
  
  #security for environment variables
