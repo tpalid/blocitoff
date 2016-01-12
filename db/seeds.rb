@@ -38,6 +38,14 @@ users = User.all
     )
 end
 
+50.times do
+    Item.create!(
+        user: users.sample,
+        body: Faker::Lorem.sentence,
+        created_at: Date.today - 10.days
+    )
+end
+
 #check that seeding was successful
 puts "Seed complete"
 puts "#{User.count} users created"
