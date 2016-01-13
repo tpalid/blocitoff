@@ -8,7 +8,19 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def after_sign_in_path_for(resource)
     user_path(current_user)
   end
-  
+   protect_from_forgery
+
+    after_filter :flash_to_headers
+
+    def flash_to_headers
+        return unless request.xhr?
+        response.headers['X-Message'] = flash_message
+        response.headers["X-Message-Type"] = flash_type.to_s
+
+        flash.discard # don't want the flash to appear when you reload page
+    end
+
+ #attempt to make flash messages work with ajax
   protected
 
   def configure_permitted_parameters
@@ -17,4 +29,18 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :password_confirmation, :current_password) }
   end
   #Allows user to add and edit name, must be here because rails 4 has moved this to controller, so cannot be in user model
+     private
+
+    def flash_message
+        [:error, :warning, :notice].each do |type|
+            return flash[type] unless flash[type].blank?
+        end
+    end
+
+    def flash_type
+        [:error, :warning, :notice].each do |type|
+            return type unless flash[type].blank?
+        end
+    end
+    #attempt to make flash messages work with ajax
 end
