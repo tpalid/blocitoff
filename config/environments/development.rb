@@ -42,4 +42,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://blocitoff-tpalid1.c9users.io/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
+  
+  config.web_console.whitelisted_ips = '104.247.40.66'
+  
+  config.web_console.whitelisted_ips = '104.247.40.66'
+  
+  config.web_console.whiny_requests = false
+  
 end
