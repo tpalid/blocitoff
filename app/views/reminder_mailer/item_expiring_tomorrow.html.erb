@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    </head>
+    <body>
+        <p>Hi <%= @user.name %>!</p>
+        <p>You have tasks expiring tomorrow!  Check them out on your <%= link_to "to do list", user_url(@user) %>. If you don't complete these tasks by midnight tomorrow, they will be deleted.  But hey, if you've gone this long...were they ever really that important to begin with? </p>
+        <p>Cheers,</p>
+        <p>The BlocItOff Team</p>
+    </body>
+</html>
