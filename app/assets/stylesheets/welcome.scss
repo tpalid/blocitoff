@@ -1,3 +1,16 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron h1 {
+    font-family: 'Pacifico', cursive;
+    // font-family: 'Cabin Sketch', cursive;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+}
+
+.jumbotron {
+    text-align: center;
+    font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;;
+}
