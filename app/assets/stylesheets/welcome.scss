@@ -3,16 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron #header {
-    font-family: 'Pacifico', cursive;
+    // font-family: 'Pacifico', cursive;
     // font-family: 'Cabin Sketch', cursive;
+    
     text-align: center;
     font-size: 100px;
     color: white;
+    margin-bottom: 40px;
 }
 
 #jumbo {
     text-align: center;
     color: white;
-    font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;
+    font-family: 'Cuprum', sans-serif;
     background-color: #333366;
+   
+
 }
+
+
