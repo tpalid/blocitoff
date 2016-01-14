@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="jumbotron">
-        <h1>BlocItOff</h1>
+    <div class="jumbotron" id="jumbo">
+    <h1 id="header">BlocItOff</h1>
         <p>A self destructing to-do list.  It gives up on you, so you don't have to give up on yourself.</p>
     </div>
 </div>
@@ -16,13 +16,13 @@
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
-  </div
+  </div>
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
+  <% end %>
 
   <div class="actions">
     <%= f.submit "Log in" %>

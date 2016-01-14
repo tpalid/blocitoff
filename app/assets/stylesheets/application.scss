@@ -15,3 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#bootstrap-overrides {
+    font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;
+}

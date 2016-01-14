@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.jumbotron h1 {
+.jumbotron #header {
     font-family: 'Pacifico', cursive;
     // font-family: 'Cabin Sketch', cursive;
     text-align: center;
@@ -10,7 +10,9 @@
     color: white;
 }
 
-.jumbotron {
+#jumbo {
     text-align: center;
-    font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;;
+    color: white;
+    font: 400 16px/1.6 'Arimo', Verdana, Helvetica, sans-serif;
+    background-color: #333366;
 }

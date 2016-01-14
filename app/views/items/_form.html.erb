@@ -4,6 +4,10 @@
         <%= f.label :item %></br>
         <%= f.text_area :body %>
     </div>
+    <p><b>How many days would you like to complete this task?  We recommend 7.</b><p>
+    <div class="form-group">
+        <%= f.text_field :lifespan %>
+    </div>
     <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-success' %>
     </div>
