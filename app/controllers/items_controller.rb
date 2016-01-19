@@ -50,6 +50,6 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:body, :lifespan)
+    params.require(:item).permit(:body, :end_date)
   end
 end
