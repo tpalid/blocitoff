@@ -90,5 +90,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-require "pundit/rspec"
+# require "pundit/rspec"
 end
