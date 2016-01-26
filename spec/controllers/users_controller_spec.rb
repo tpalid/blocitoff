@@ -8,6 +8,7 @@ describe UsersController do
     before do
         @user = create(:user)
         @user2 = create(:user_with_items)
+        @admin = create(:admin)
     end
     
       describe 'GET show' do
@@ -45,7 +46,24 @@ describe UsersController do
                 end
                 
                 it "render the index view" do
-                    expect(response).to render_template(:index)
+                    expect(response).to render_template(:show)
+                end
+            end
+            
+            context "admin viewing profile" do
+                before{ sign_in(@admin) }
+                before{ get :show, {id: @user2.id} }
+                
+                it 'returns success' do
+                    expect(response).to be_success
+                end
+                
+                it "assigns all the user's items to @items" do
+                    expect(assigns(:items)).to eq(@user2.items)
+                end
+                
+                it "render the index view" do
+                    expect(response).to render_template(:show)
                 end
             end
         end

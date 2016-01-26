@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160122004534) do
+ActiveRecord::Schema.define(version: 20160126202720) do
 
   create_table "items", force: :cascade do |t|
     t.text     "body"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160122004534) do
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
     t.boolean  "email_reminders",        default: true
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

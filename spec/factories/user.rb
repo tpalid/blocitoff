@@ -12,6 +12,10 @@ FactoryGirl.define do
                 create(:private_item, user: user, public: false)
             end
         end
+        
+        factory :admin do
+            role "admin"
+        end
     end
 end
     
