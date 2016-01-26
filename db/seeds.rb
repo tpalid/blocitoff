@@ -34,7 +34,8 @@ users = User.all
 50.times do
     Item.create!(
         user: users.sample,
-        body: Faker::Lorem.sentence
+        body: Faker::Lorem.sentence,
+        public: true
     )
 end
 
@@ -42,7 +43,8 @@ end
     Item.create!(
         user: users.sample,
         body: Faker::Lorem.sentence,
-        created_at: Date.today - 10.days
+        created_at: Date.today - 10.days,
+        public: true
     )
 end
 
