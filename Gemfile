@@ -13,6 +13,9 @@ gem 'rails', '4.2.4'
    gem 'sqlite3'
  end
  
+ #authorization for users
+ gem 'pundit'
+ 
  #automate tasks (deletion of items over 7 days old)
  gem 'whenever', :require => false
  
