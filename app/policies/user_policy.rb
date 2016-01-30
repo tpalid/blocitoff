@@ -1,5 +1,5 @@
 class UserPolicy < ApplicationPolicy
     def show?
-        record.user == current_user || user.admin?
+        scope.where(:id => record.id).exists? && user.present?
     end
 end
