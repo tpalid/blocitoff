@@ -3,9 +3,8 @@ class Item < ActiveRecord::Base
     
     # default_scope { order('DESC') }
     
-    scope :visible_to, -> (user) { user ? all : where(public: true) }
-    
-    # def visible_to(user)
+  
+    # def self.visible_to(user)
     #   if self.user_id == user.id || user.admin.true?
     #     all
     #   else
