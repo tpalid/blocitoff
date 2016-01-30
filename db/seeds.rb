@@ -35,8 +35,8 @@ users = User.all
     Item.create!(
         user: users.sample,
         body: Faker::Lorem.sentence,
-        created_at: Time.now,
-        lifespan: 15
+        lifespan: 15,
+        public: true
     )
 end
 
@@ -45,7 +45,8 @@ end
         user: users.sample,
         body: Faker::Lorem.sentence,
         created_at: Date.today - 10.days,
-        lifespan: 15
+        lifespan: 15,
+        public: true
     )
 end
 

@@ -5,6 +5,7 @@ class Item < ActiveRecord::Base
     
     # default_scope { order('end_date DESC' :end_date) }
     
+
     def created_at
       created_at ||= Time.zone.now 
     end
@@ -20,7 +21,6 @@ class Item < ActiveRecord::Base
       end
     end
     
-   
     def days_left
       (self.end_date.to_date - Date.today).to_i
     end

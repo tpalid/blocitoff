@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
 before_action :configure_permitted_parameters, if: :devise_controller?
 
+include Pundit
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+    protect_from_forgery with: :exception
   
   def after_sign_in_path_for(resource)
     user_path(current_user)
@@ -31,16 +33,16 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   #Allows user to add and edit name, must be here because rails 4 has moved this to controller, so cannot be in user model
      private
 
-    def flash_message
-        [:error, :warning, :notice].each do |type|
-            return flash[type] unless flash[type].blank?
-        end
-    end
+    # def flash_message
+    #     [:error, :warning, :notice].each do |type|
+    #         return flash[type] unless flash[type].blank?
+    #     end
+    # end
 
-    def flash_type
-        [:error, :warning, :notice].each do |type|
-            return type unless flash[type].blank?
-        end
-    end
-    #attempt to make flash messages work with ajax
+    # def flash_type
+    #     [:error, :warning, :notice].each do |type|
+    #         return type unless flash[type].blank?
+    #     end
+    # end
+    # #attempt to make flash messages work with ajax
 end
