@@ -3,70 +3,79 @@
     <h1 id="header">BlocItOff</h1>
         <p>A self destructing to-do list.  It gives up on you, so you don't have to give up on yourself.</p>
     </div>
-</div>
-<div class="col-md-4">
-<h2>Sign In</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<div class= "row">
+  <div class="col-md-2">
+    
+    <h2>Sign In</h2>
+    
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
-<%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
-</div>
-<!--<div class="img-rounded">-->
-<!--   <img src="http://i.imgur.com/moljYgk.jpg" title="source: imgur.com">-->
-<!--</div>-->
-<div class="col-md-4">
-<h2>Sign Up</h2>
-<%= form_for(:user, :url => session_path(:user)) do |f| %>
- <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
   
-  <div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, autofocus: true %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+      </div>
+      <% end %>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="col-md-8">
+    <div class="img text-center">
+      <img id="img" src="http://i.imgur.com/2yxcY0nl.jpg">
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <div class="col-md-2">
+    <h2>Sign Up</h2>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div></br>
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+     <%= devise_error_messages! %>
+  
+      <div class="field">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div></br>
+
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
 
 </div>
 
-</div>

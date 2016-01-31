@@ -16,6 +16,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.user-info {
+    margin-top: 10px;
+}
+
 #bootstrap-overrides {
     font-family: 'Cuprum', sans-serif;
+    }
+    
+body {
+    background-image: url("http://i.imgur.com/iVxHYHJ.png");
+    font-size: 16px;
 }
+
