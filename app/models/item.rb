@@ -7,7 +7,7 @@ class Item < ActiveRecord::Base
     
     validates :body, length: { minimum: 4 }, presence: true
     validates :user, presence: true
-    validates :lifespan, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
+    # validates :lifespan, numericality: { only_integer: true, greater_than: 0, less_than: 100 }
     
 
     def created_at
