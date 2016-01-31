@@ -5,6 +5,9 @@ class Item < ActiveRecord::Base
     
     default_scope { order('end_date ASC') }
     
+    validates :body, length: { minimum: 5 }, presence: true
+    validates :user, presence: true
+    
 
     def created_at
       created_at ||= Time.zone.now 
