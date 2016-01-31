@@ -3,7 +3,7 @@ class Item < ActiveRecord::Base
     belongs_to :user
     require 'date'
     
-    # default_scope { order('end_date DESC' :end_date) }
+    default_scope { order('end_date ASC') }
     
 
     def created_at
