@@ -12,9 +12,9 @@ class ItemsController < ApplicationController
       redirect_to [current_user]
       #will need to update this to use ajax
     else
-      flash[:notice] = "There was an error saving the item.  Please try again."
-      #need to implement ajax on this
-      # render :new
+      flash[:error]
+      # = "There was an error saving the item.  Please try again."
+      redirect_to [current_user]
     end
   end
 
@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     if @item.destroy
       flash[:notice] = "#{ success_message }"
     else 
-      flash[:notice] = "There was an error marking the task complete. Are you sure you finished it?"
+      flash[:error] = "There was an error marking the task complete. Are you sure you finished it?"
     end
     
     respond_to do |format|
