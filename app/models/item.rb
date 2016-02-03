@@ -26,7 +26,7 @@ class Item < ActiveRecord::Base
     end
     
     def days_left
-      (self.end_date.to_date - Date.today).to_i
+      (self.end_date.to_date - Date.today).round(0)
     end
     
 end
