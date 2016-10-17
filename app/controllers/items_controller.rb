@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  include ItemsHelper
+  # include ItemsHelper
   def new
     @item = Item.new
   end

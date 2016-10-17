@@ -4,5 +4,6 @@ class UsersController < ApplicationController
         authorize @user
         @items = policy_scope(@user.items)
         @item = Item.new
+        # render json: @user
     end
 end

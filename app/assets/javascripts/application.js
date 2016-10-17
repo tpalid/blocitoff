@@ -35,5 +35,13 @@ $(document).ajaxComplete(function(event, request) {
     show_ajax_message(msg, type); //use whatever popup, notification or whatever plugin you want
 });
 
-
+var blocmetrics = {};
+    blocmetrics.report = function(eventName){
+        var event = { name: eventName };
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://blocmetrics-tpalid1.c9users.io/api/events", true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify(event));
+    };
+blocmetrics.report('pageview');
 
